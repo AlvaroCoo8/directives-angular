@@ -1,1 +1,12 @@
-<p>counter works!</p>
+<div>
+  <p>Counter: {{ counter }}</p>
+  <button type="button" class="btn btn-outline-dark" (click)="increaseBy(-1)">
+    -
+  </button>
+  <button type="button" class="btn btn-outline-dark" (click)="reset(0)">
+    Reset
+  </button>
+  <button type="button" class="btn btn-outline-dark" (click)="increaseBy(1)">
+    +
+  </button>
+</div>
