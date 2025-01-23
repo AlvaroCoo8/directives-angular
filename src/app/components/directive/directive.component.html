@@ -3,27 +3,23 @@
 <div class="d-flex justify-content-center">
   <span
     class="border border-dark border-2 p-1 rounded"
-    (mouseenter)="toggleTextNgIf(pVNgIF)"
+    (mouseenter)="toggleText(pVNgIF)"
   >
     {{ pNgIf }}
   </span>
 
   <span
     class="border border-dark border-2 p-1 rounded"
-    (mouseenter)="toggleTextIf(pVIF)"
+    (mouseenter)="toggleText(pVIF)"
   >
     {{ pIf }}
   </span>
 </div>
 
 <div class="d-flex justify-content-center">
-  @if (displayTextNgIf) {
+  @if (displayText) {
   <span class="border border-danger border-2 p-1 rounded">
-    {{ pVNgIF }}
-  </span>
-  } @if (displayTextIf) {
-  <span class="border border-danger border-2 p-1 rounded">
-    {{ pVIF }}
+    {{ displayText }}
   </span>
   }
 </div>
