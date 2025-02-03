@@ -1,1 +1,54 @@
-<p>directive-else works!</p>
+<div class="container mt-5">
+  <h1 class="text-center">{{ title }}</h1>
+
+  <form class="card p-4 shadow-sm">
+    <div class="mb-3">
+      <label for="inputName" class="form-label fw-bold">Name</label>
+      <input
+        #inputName
+        type="text"
+        class="form-control"
+        id="inputName"
+        placeholder="Enter name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="inputSurname" class="form-label fw-bold">Surname</label>
+      <input
+        #inputSurname
+        type="text"
+        class="form-control"
+        id="inputSurname"
+        placeholder="Enter surname"
+      />
+    </div>
+    <div class="d-flex gap-2">
+      <button (click)="loginOld()" type="button" class="btn btn-primary w-100">
+        Log in {{ versionOld }}
+      </button>
+      <button
+        (click)="loginLatest()"
+        type="button"
+        class="btn btn-success w-100"
+      >
+        Log in {{ versionLatest }}
+      </button>
+    </div>
+  </form>
+
+  <div class="mt-3 text-center">
+    @if (boolLoginOld) {
+    <div class="alert alert-primary">
+      <strong>{{ inputName.value }} {{ inputSurname.value }}</strong> registered
+      {{ versionOld }}
+    </div>
+    <p class="text-muted">No one registered {{ versionLatest }}</p>
+    } @else if (boolLoginLatest) {
+    <p class="text-muted">No one registered {{ versionOld }}</p>
+    <div class="alert alert-success">
+      <strong>{{ inputName.value }} {{ inputSurname.value }}</strong> registered
+      {{ versionLatest }}
+    </div>
+    }
+  </div>
+</div>
